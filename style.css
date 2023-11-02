@@ -5,6 +5,7 @@
   --banner-text-size: 7vh;
   --banner-image-radius: 20vh;
   --introduction-text-size:6vh;
+
 }
 
 body{
@@ -34,7 +35,7 @@ header{
 }
 
 .social img{
-  width: 6vh;
+  width: 6vw;
   margin: 0.2vw;
 }
 
@@ -144,5 +145,68 @@ nav ul li a:hover{
   color: black;
 }
 
+@media screen and (max-width: 600px) {
+  :root{
+    --header-font-size: 1.5vh;
+    --banner-height: 100vh;
+    --banner-text-size: 4.6vh;
+    --banner-image-radius: 10vh;
+    --introduction-text-size:1.5vh;
+  }
+  .banner{
+    flex-direction: column;
+  }
+  .social img {
+    width: 5vw;
+    margin: 0.1vw;
+  }
 
+  .col h1{
+    font-size: var(--banner-text-size);
+    margin-top: 1vh;
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .hero{
+    padding-right: 0;
+  }
+  .banner img {
+    height: 50vh!important;
+    border-radius: var(--banner-image-radius);
+    border: 1vw solid white;
+    border-width: 1.2vw 0.8vw;
+  }
+
+}
+
+@media  screen and (min-width: 768px) {
+  :root{
+    --header-font-size: 3vh;
+    --banner-height: 100vh;
+    --banner-text-size: 4.6vh;
+    --banner-image-radius: 10vh;
+    --introduction-text-size:4vh;
+  }
+
+  .social img{
+    width: 3vw;
+    margin: 0.1vw;
+  }
+}
+
+@media  screen and (min-width: 992px) {
+  :root{
+    --header-font-size: 3.5vh;
+    --banner-height: 100vh;
+    --banner-text-size: 7vh;
+    --banner-image-radius: 12vh;
+    --introduction-text-size:4.5vh;
+  }
+
+  .social img{
+    width: 2.5vw;
+    margin: 0.1vw;
+  }
+}
 
