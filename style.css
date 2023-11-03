@@ -5,7 +5,7 @@
   --banner-text-size: 7vh;
   --banner-image-radius: 20vh;
   --introduction-text-size:6vh;
-
+  --blocks-text-size: 4.5vh;
 }
 
 body{
@@ -15,6 +15,8 @@ body{
   box-sizing: border-box;
   overflow-x: hidden;
 }
+
+/* ===============================HEADER==================================*/
 
 header{
   width: 100vw;
@@ -36,6 +38,7 @@ header{
 
 .social img{
   width: 6vw;
+  max-width: 25px;
   margin: 0.2vw;
 }
 
@@ -70,6 +73,8 @@ nav ul li a:hover{
   color: gray;
   transition-duration: 0.5s; 
 }
+
+/* ===============================BANNER==================================*/
 
 .banner{
   width: 100vw;
@@ -117,6 +122,8 @@ nav ul li a:hover{
   color: #FDC675;
 }
 
+/*----------------------------INTRODUCTION------------------------------------*/
+
 .introduction {
   display: flex;
   justify-content: center;
@@ -145,6 +152,104 @@ nav ul li a:hover{
   color: black;
 }
 
+/*-------------------------------------LINK BLOCKS-----------------------------------------*/
+.page-blocks {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 20vh;
+  margin-bottom: 20vh;
+}
+
+.page-blocks a{
+  text-decoration: none;
+  color:  whitesmoke;
+  font-weight: bold;
+  font-size: var(--blocks-text-size);
+}
+
+.block{
+  width: 25vw;
+  height: 65vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--banner-image-radius);
+  background-color: #FDC675;
+  border: 1.5px solid black;
+}
+
+.blogs{
+  background-image: url(images/working-image.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.projects{
+  background-image: url(images/programming-block.webp);
+  background-size: cover;
+  background-position: center;
+}
+
+.gallery{
+  background-image: url(images/IMG_2010.JPG);
+  background-size: cover;
+  background-position: center;
+}
+
+
+.block:hover{
+  transform: scale(1.1) translateY(-7vh);
+  transition-duration: 0.5s;
+}
+/*------------------------------FOOTER----------------------------------*/
+
+footer {
+  width: 100vw;
+  border-top: 2px solid gray;
+  background-color: #FDC675;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 30vh;
+  justify-content: space-around;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+footer .social-container{
+  grid-column: 1 / 1;
+  display: flex;
+  align-items:flex-start;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+footer .social-container p{
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+footer .logo{
+  grid-column: 2 / span 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer .social-container .socials{
+  margin-bottom: 0;
+  position: relative;
+  left: -0.2vw;
+}
+
+footer .logo h2{
+  font-size: 4vh;
+  font-weight: bold;
+  color: white !important;
+}
+
+/*-------------------------------MEDIAS ARE DOWN HERE---------------------------------*/
+
 @media screen and (max-width: 600px) {
   :root{
     --header-font-size: 1.5vh;
@@ -156,9 +261,27 @@ nav ul li a:hover{
   .banner{
     flex-direction: column;
   }
+
+  .banner h2{
+    text-align: center;
+  }
   .social img {
     width: 5vw;
     margin: 0.1vw;
+    max-width: 25px;
+  }
+
+  .page-blocks{
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+  }
+
+  .block{
+    margin-bottom: 20px;
+    min-width: 50vw;
+    max-height: 35vh;
   }
 
   .col h1{
@@ -178,9 +301,38 @@ nav ul li a:hover{
     border-width: 1.2vw 0.8vw;
   }
 
+  footer{
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  footer .logo {
+    grid-area: 1 / 1;
+  }
+  footer .social-container{
+    grid-area: 2 / 1;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
-@media  screen and (min-width: 768px) {
+@media screen and (min-width: 601px) and (max-width: 767px){
+  
+  .page-blocks{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .block{
+    margin-bottom: 20px;
+    min-width: 50vw;
+  }
+
+}
+
+
+
+@media  screen and (min-width: 768px) and (max-width: 991px) {
   :root{
     --header-font-size: 3vh;
     --banner-height: 100vh;
@@ -189,13 +341,26 @@ nav ul li a:hover{
     --introduction-text-size:4vh;
   }
 
+  
+  .page-blocks{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .block{
+    margin-bottom: 20px;
+    min-width: 50vw;
+  }
+
+
   .social img{
     width: 3vw;
+    max-width: 35px;
     margin: 0.1vw;
   }
 }
 
-@media  screen and (min-width: 992px) {
+@media  screen and (min-width >= 992px) {
   :root{
     --header-font-size: 3.5vh;
     --banner-height: 100vh;
@@ -206,7 +371,13 @@ nav ul li a:hover{
 
   .social img{
     width: 2.5vw;
+    max-width: 100px;
     margin: 0.1vw;
   }
+  
+ .page-blocks{
+    flex-direction: row;
+    align-items: center;
+ }
 }
 
